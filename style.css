@@ -1,9 +1,22 @@
-.maze {
-    border: 3px solid black;
-}
-.maze-tile {
-    border: 1px dotted black;
+div.maze {
+    position: absolute;
+    width: 98%;
     display: flex;
-    height: 100%;
-    width: 100%;
+    flex-grow: 1;
+    border: 3px solid black;
+    display: grid;
+    grid-template-columns: 30px 30px;
+    grid-template-rows: 30px 30px;
+}
+div.maze-tile {
+    display: flex;
+    align-content: stretch;
+
+    border: 1px dotted black;
+}
+button.begin {
+    position: absolute;
+    right: 50%;
+    bottom: 0;
+    margin: 15px;
 }
