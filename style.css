@@ -24,10 +24,10 @@ div.maze-tile {
     height: 100px;
 }
 div.player {
-    position: absolute;
     background-image: url(./assets/rat_face_icon.png);
     background-size: cover;
     background-position: center center;
+    background-color: #cccccc;
 }
 button.begin {
     align-items: center;
