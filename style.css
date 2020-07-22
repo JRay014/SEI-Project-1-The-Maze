@@ -22,12 +22,18 @@ div.maze-tile {
     box-sizing: border-box;
     border: 1px dotted black;
     height: 100px;
+    align-items: center;
+    justify-content: center;
 }
 div.player {
     background-image: url(./assets/rat_face_icon.png);
     background-size: cover;
     background-position: center center;
     background-color: #cccccc;
+    height: 20px;
+    width: 20px;
+    align-items: center;
+    justify-content: center;
 }
 button.begin {
     align-items: center;
