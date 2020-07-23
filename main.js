@@ -4,19 +4,25 @@ const player = document.querySelector('.player');
 const startButton = document.querySelector('.start');
 
 function enterTheMaze() {
-    const tile10 = document.querySelector('#ten');
+    const tile10 = document.querySelector('#fifthteen');
     // const startButton = document.querySelector('.start');
     const maze = document.querySelector('.maze');
     tile10.append(player);
     startButton.remove();
     maze.style.height = '98%';
     // player.style.
-    console.log("it works")
+    // console.log("it works")
 }
 
 function move() {
     
 }
+
+function win() {
+    if(player) {}
+    //target eventlistener to tile 6
+}
+
 startButton.addEventListener('click', enterTheMaze);
 
 // x.addEventListener('click', move());

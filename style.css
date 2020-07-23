@@ -1,12 +1,17 @@
+body {
+   align-items: center;
+}
+
 h1{
     text-align: center;
 }
+
 div.maze {
     /* position: absolute; */
     width: 99%;
     display: flex;
     flex-wrap: wrap;
-    border: 3px solid black;
+    /* border: 3px solid black; */
     /* display: grid;
     grid-template-columns: 30px 30px;
     grid-template-rows: 30px 30px; */
@@ -14,17 +19,120 @@ div.maze {
 div.maze-row {
     flex-grow: 1;
 }
+
 div.maze-tile {
     display: flex;
     flex-grow: 1;
     flex-wrap: wrap;
     align-content: stretch;
     box-sizing: border-box;
-    border: 1px dotted black;
+    border: 1px solid black;
     height: 100px;
     align-items: center;
     justify-content: center;
 }
+
+#fifthteen {
+    /* border-top: 1px solid black;
+    border-left: 1px solid black; */
+    border-bottom: none;
+    border-right: none;
+}
+
+#one {
+    border-top: 10px solid black;
+    border-left: 10px solid black;
+}
+
+#two {
+    border-left: 10px solid black;
+}
+
+#three {
+    border-left: 10px solid black;
+}
+
+#four {
+    border-left: 10px solid black;
+}
+
+#five {
+    border-left: 10px solid black;
+    border-bottom: 10px solid black;
+}
+
+#six {
+    border-top: 10px solid black;
+    border-bottom: none;
+}
+
+#seven {
+    border-top: none;
+    border-bottom: none;
+}
+
+#eight {
+    border-bottom: none;
+    border-top: none;
+}
+
+#nine {
+    border-right: none;
+    border-bottom: none;
+    border-top: none;
+}
+
+#ten {
+    border-bottom: 10px solid black;
+    border-top: none;
+}
+
+#eleven {
+    border-top: 10px solid black;
+}
+
+#fourteen {
+    border-right: none;
+    border-left: none;
+}
+
+#sixteen {
+    border-top: 10px solid black;
+}
+
+#nineteen {
+    border-bottom: none;
+    border-left: none;
+}
+
+#twenty {
+    border-bottom: 10px solid black;
+    border-left: none;
+    border-top: none;
+}
+
+#twentyone {
+    border-top: 10px solid black;
+    border-right: 10px solid black;
+}
+
+#twentytwo {
+    border-right: 10px solid black;
+}
+
+#twentythree {
+    border-right: 10px solid black;
+}
+
+#twentyfour{
+    border-right: 10px solid black;
+}
+
+#twentyfive {
+    border-bottom: 10px solid black;
+    border-right: 10px solid black;
+}
+
 div.player {
     background-image: url(./assets/rat_face_icon.png);
     background-size: cover;
@@ -35,6 +143,7 @@ div.player {
     align-items: center;
     justify-content: center;
 }
+
 button.begin {
     align-items: center;
     right: 50%;
