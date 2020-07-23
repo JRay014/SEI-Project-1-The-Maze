@@ -1,4 +1,5 @@
 const player = document.querySelector('.player');
+const board = document.querySelector('body');
 // const maze = document.querySelector('.maze');
 // const mazeTile = document.querySelectorAll('.maze-tile');
 const startButton = document.querySelector('.start');
@@ -12,6 +13,8 @@ function enterTheMaze() {
     maze.style.height = '98%';
     // player.style.
     // console.log("it works")
+    const resetButton = document.createElement('button');
+    resetButton.innerHTML = 'Reset Maze';
 }
 
 function move() {
@@ -21,6 +24,10 @@ function move() {
 function win() {
     if(player) {}
     //target eventlistener to tile 6
+}
+
+function reset() {
+    
 }
 
 startButton.addEventListener('click', enterTheMaze);
