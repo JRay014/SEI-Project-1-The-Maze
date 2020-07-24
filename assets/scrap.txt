@@ -1,0 +1,15 @@
+// if (player.parentElement = tile15) {
+//     tile20.addEventListener('click', () => move(tile20));
+// } else if (player.parentElement = tile20) {
+//     tile15.addEventListener('click', () => move(tile15));
+//     tile19.addEventListener('click', () => move(tile19));
+// } else if (player.parentElement = tile19) {
+//     tile14.addEventListener('click', () => move(tile14));
+// } else if (player.parentElement = tile14) {
+//     tile9.addEventListener('click', () => move(tile9));
+//     tile19.addEventListener('click', () => move(tile19));
+// } else if (player.parentElement = tile9) {
+//     tile8.addEventListener('click', () => move(tile8));
+//     tile10.addEventListener('click', () => move(tile10));
+//     tile14.addEventListener('click', () => move(tile14));
+// }
