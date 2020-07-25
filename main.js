@@ -1,7 +1,7 @@
 const player = document.querySelector('.player');
 const board = document.querySelector('body');
 const maze = document.querySelector('.maze');
-const mazeTile = document.querySelectorAll('.maze-tile');
+const mazeTiles = document.querySelectorAll('.maze-tile');
 const startButton = document.querySelector('.start');
 const tile15 = document.querySelector('#fifthteen');
 const tile6 = document.querySelector('#six');
@@ -12,16 +12,16 @@ const tile14 = document.querySelector('#fourteen');
 const tile19 = document.querySelector('#nineteen');
 const tile20 = document.querySelector('#twenty');
 
-const moveConditions = [
-    ['twenty'],
-    ['fifthteen','nineteen'],
-    ['twenty','fourteen'],
-    ['nineteen','nine'],
-    ['fourteen','ten','eight'],
-    ['nine'],
-    ['nine','seven'],
-    ['eight','six'],
-]
+const moveConditions = {
+    fifthteen: ['twenty'],
+    twenty: ['fifthteen','nineteen'],
+    nineteen: ['twenty','fourteen'],
+    fourteen: ['nineteen','nine'],
+    nine: ['fourteen','ten','eight'],
+    ten: ['nine'],
+    eight: ['nine','seven'],
+    seven: ['eight','six'],
+}
 
 function enterTheMaze() {
 //startTile
@@ -36,12 +36,32 @@ function enterTheMaze() {
     const resetButton = document.createElement('button');
     resetButton.innerHTML = 'Reset Maze';
     board.append(resetButton);
+    mazeTiles.forEach((mazeTile) => {
+        mazeTile.addEventListener('click', (evt) => {
+           move(evt.target); 
+        })
+    // evt.target = moveTo;
+    // return moveTo;
+    });
 }
 
 function move(tile) {
-    // if (tile15.children.includes(player) == true) {
+    currentTile = player.parentElement;
+    // console.log(tile.id);
+    // console.log(player.parentElement);
+    // console.log(player.parentElement.id);
+    if (player.parentElement.id = moveConditions) {
         tile.append(player);
+    } else {
+
     }
+    // for(tile in moveConditions) {
+    //     if (currentTile == tile) {
+    //         moveTo(moveConditions[tile]);
+    //     }
+    // }
+    // if (tile15.children.includes(player) == true) {
+}
 
 
 function win() {
