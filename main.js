@@ -38,28 +38,19 @@ mazeTiles.forEach((mazeTile) => {
 
 function move(moveToTile) {
     currentTile = player.parentElement.id;
-    console.log(currentTile);
-    console.log(moveToTile.id);
+    const key = {}
+    const value = {}
     Object.keys(moveConditions).forEach((key) => {
-        // console.log('key', key);
-        Object.values(moveConditions).forEach((value) => {
-            // console.log('value', value);
-            if (currentTile == key) {
-                for(let i=0; i < value.length; i++) {
-                    console.log(key[i])
-                if (moveToTile.id == value) {
-                moveToTile.append(player);
-                }
-            }
-            } else {
-                // console.log('invalid move!')
+        return key 
+    });
+    Object.values(moveConditions).forEach((value) => {
+        return value 
+    });
+    for (value of key) {
+        if ((currentTile == key) && (moveToTile.id == value)) {
+            moveToTile.append(player);
+        } else {
+            console.log('invalid move');
         }
-        });
-    })
+    };
 }
-// Object.keys(moveConditions).forEach((key) => {
-//     console.log(key, moveConditions[key]);
-// });
-// Object.values(moveConditions).forEach((value) => {
-//     console.log(value);
-// });
