@@ -6,14 +6,14 @@ const startButton = document.querySelector('.start');
 const tile15 = document.querySelector('#fifthteen');
 
 const moveConditions = {
-    fifthteen: ['#twenty'],
-    twenty: ['#fifthteen','#nineteen'],
-    nineteen: ['#twenty','#fourteen'],
-    fourteen: ['#nineteen','#nine'],
-    nine: ['#fourteen','#ten','#eight'],
-    ten: ['#nine'],
-    eight: ['#nine','#seven'],
-    seven: ['#eight','#six'],
+    fifthteen: ['twenty'],
+    twenty: ['fifthteen','nineteen'],
+    nineteen: ['twenty','fourteen'],
+    fourteen: ['nineteen','nine'],
+    nine: ['fourteen','ten','eight'],
+    ten: ['nine'],
+    eight: ['nine','seven'],
+    seven: ['eight','six'],
 }
 
 function enterTheMaze(startTile) {
@@ -32,16 +32,34 @@ startButton.addEventListener('click', () => {
 mazeTiles.forEach((mazeTile) => {
     mazeTile.addEventListener('click', (evt) => {
        move(evt.target);
+       console.log(evt.target);
     })
 });
 
 function move(moveToTile) {
     currentTile = player.parentElement.id;
-    for(currentTile in moveConditions) {
-        if (player.parentElement.id = currentTile) {
-            moveToTile.append(player);
-        } else {
-            console.log('invalid move!')
+    console.log(currentTile);
+    console.log(moveToTile.id);
+    Object.keys(moveConditions).forEach((key) => {
+        // console.log('key', key);
+        Object.values(moveConditions).forEach((value) => {
+            // console.log('value', value);
+            if (currentTile == key) {
+                for(let i=0; i < value.length; i++) {
+                    console.log(key[i])
+                if (moveToTile.id == value) {
+                moveToTile.append(player);
+                }
+            }
+            } else {
+                // console.log('invalid move!')
         }
-    }
+        });
+    })
 }
+// Object.keys(moveConditions).forEach((key) => {
+//     console.log(key, moveConditions[key]);
+// });
+// Object.values(moveConditions).forEach((value) => {
+//     console.log(value);
+// });

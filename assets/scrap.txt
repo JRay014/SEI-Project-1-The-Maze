@@ -111,3 +111,26 @@ startButton.addEventListener('click', enterTheMaze);
 // x.addEventListener('click', move());
 //have player move in each tile of the div.
 // every folk causes a click event.
+
+
+Object.keys(moveConditions).forEach((key) => {
+    console.log(key, moveConditions[key]);
+});
+Object.values(moveConditions).forEach((value) => {
+    console.log(value);
+});
+
+
+
+function move(moveToTile) {
+    currentTile = player.parentElement.id;
+    Object.keys(moveConditions).forEach((key) => {
+        Object.values(moveConditions).forEach((value) => {
+            if ((currentTile == key) && (moveToTile.id == value)) {
+                moveToTile.append(player);
+            } else {
+                console.log('invalid move!')
+        }
+        });
+    })
+}
