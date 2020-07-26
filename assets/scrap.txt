@@ -156,3 +156,24 @@ function move(moveToTile) {
         });
     })
 }
+
+
+
+    const key = {}
+    const value = {}
+    Object.keys(moveConditions).forEach((key) => {
+        return key 
+    });
+    console.log(key);
+    Object.values(moveConditions).forEach((value) => {
+        return value 
+    });
+    console.log(value);
+    for (value of key) {
+        if ((currentTile == key) && (moveToTile.id == value)) {
+            moveToTile.append(player);
+        } else {
+            console.log('invalid move');
+        }
+    };
+}

@@ -3,7 +3,9 @@ const board = document.querySelector('body');
 const maze = document.querySelector('.maze');
 const mazeTiles = document.querySelectorAll('.maze-tile');
 const startButton = document.querySelector('.start');
+const resetButton = document.createElement('button');
 const tile15 = document.querySelector('#fifthteen');
+const tile6 = document.querySelector('#six');
 
 const moveConditions = {
     fifthteen: ['twenty'],
@@ -20,7 +22,6 @@ function enterTheMaze(startTile) {
     startTile.append(player);
     startButton.remove();
     maze.style.height = '98%';
-    const resetButton = document.createElement('button');
     resetButton.innerHTML = 'Reset Maze';
     board.append(resetButton);
 }
@@ -38,19 +39,25 @@ mazeTiles.forEach((mazeTile) => {
 
 function move(moveToTile) {
     currentTile = player.parentElement.id;
-    const key = {}
-    const value = {}
-    Object.keys(moveConditions).forEach((key) => {
-        return key 
-    });
-    Object.values(moveConditions).forEach((value) => {
-        return value 
-    });
-    for (value of key) {
-        if ((currentTile == key) && (moveToTile.id == value)) {
-            moveToTile.append(player);
-        } else {
-            console.log('invalid move');
+    for (let i = 0; i < 4; i++) {
+        // console.log("Test: ", moveConditions[currentTile][i]);
+        if (moveConditions[currentTile][i] == moveToTile.id) {
+          moveToTile.append(player);
         }
-    };
+    }
+}
+
+function reset() {
+    board.append(player);
+    resetButton.remove();
+    board.append(startButton);
+}
+
+resetButton.addEventListener('click', reset)
+
+function win() {
+    if(player.parentElement == tile6) {
+        alert('You made it out of the Maze!');
+        reset();
+    }
 }
