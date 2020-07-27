@@ -16,4 +16,4 @@ Wireframes
 Unsolved Problems
 
 I wasn't able to add the fog or the multiple templates due to time contraints. I was also not able to finish my css formating and styling so some things are still unpolished in
-terms of aesthetics.
+terms of aesthetics. I also wanted to add more tiles to the maze to create harder templates. 
