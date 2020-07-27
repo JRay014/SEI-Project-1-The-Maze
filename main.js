@@ -56,7 +56,7 @@ mazeTiles.forEach((mazeTile) => {
 
 function move(moveToTile) {
     currentTile = player.parentElement.id;
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < moveConditions[currentTile].length; i++) {
         // console.log("Test: ", moveConditions[currentTile][i]);
         if (moveConditions[currentTile][i] == moveToTile.id) {
           moveToTile.append(player);
