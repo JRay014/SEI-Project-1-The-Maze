@@ -16,6 +16,7 @@ const moveConditions = {
     ten: ['nine'],
     eight: ['nine','seven'],
     seven: ['eight','six'],
+    six: ['seven'],
 }
 
 function enterTheMaze(startTile) {
@@ -43,7 +44,11 @@ function move(moveToTile) {
         // console.log("Test: ", moveConditions[currentTile][i]);
         if (moveConditions[currentTile][i] == moveToTile.id) {
           moveToTile.append(player);
-        }
+        } 
+    }
+    if (moveToTile.id == 'six') {
+        alert('You made it out of the Maze!');
+        reset();
     }
 }
 
@@ -56,8 +61,10 @@ function reset() {
 resetButton.addEventListener('click', reset)
 
 function win() {
-    if(player.parentElement == tile6) {
+    // if(player.parentElement == tile6) {
         alert('You made it out of the Maze!');
         reset();
-    }
+    // }
 }
+
+
