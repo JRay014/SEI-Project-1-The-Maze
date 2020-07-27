@@ -10,13 +10,29 @@ const tile6 = document.querySelector('#six');
 const moveConditions = {
     fifthteen: ['twenty'],
     twenty: ['fifthteen','nineteen'],
-    nineteen: ['twenty','fourteen'],
-    fourteen: ['nineteen','nine'],
-    nine: ['fourteen','ten','eight'],
-    ten: ['nine'],
-    eight: ['nine','seven'],
-    seven: ['eight','six'],
-    six: ['seven'],
+    nineteen: ['twenty','eightteen', 'twentyfour'],
+    eightteen: ['nineteen','thirteen','seventeen'],
+    thirteen: ['eightteen','fourteen'],
+    fourteen: ['thirteen','nine'],
+    nine: ['fourteen','ten',],
+    ten: ['nine','five'],
+    five: ['ten','four'],
+    four: ['five','three'],
+    three: ['four','eight'],
+    eight: ['three','seven'],
+    seven: ['eight','twelve','two'],
+    twelve: ['seven','eleven'],
+    eleven: ['twelve','six'],
+    six: ['eleven'],
+    twentyfour: ['nineteen','twentythree','twentyfive'],
+    twentyfive: ['twentyfour'],
+    twentythree: ['twentyfour','twentytwo'],
+    twentytwo: ['twentythree','twentyone'],
+    twentyone: ['twentytwo','sixteen'],
+    sixteen: ['twentyone'],
+    seventeen: ['eightteen'],
+    two: ['seven','one'],
+    one: ['two'],
 }
 
 function enterTheMaze(startTile) {
@@ -60,11 +76,11 @@ function reset() {
 
 resetButton.addEventListener('click', reset)
 
-function win() {
-    // if(player.parentElement == tile6) {
-        alert('You made it out of the Maze!');
-        reset();
-    // }
-}
+// function win() {
+//     // if(player.parentElement == tile6) {
+//         alert('You made it out of the Maze!');
+//         reset();
+//     // }
+// }
 
 
