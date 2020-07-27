@@ -1,5 +1,7 @@
 body {
    align-items: center;
+   align-content: center;
+   text-align: center;
 }
 
 h1{
@@ -28,6 +30,7 @@ div.maze-tile {
     box-sizing: border-box;
     border: 1px solid black;
     height: 100px;
+    /* width: 100px; */
     align-items: center;
     justify-content: center;
 }
@@ -186,13 +189,17 @@ div.player {
     width: 20px;
     align-items: center;
     justify-content: center;
+    margin: 0 auto;
+    border: 10px;
 }
 
 button.begin {
+    display: block;
     align-items: center;
     right: 50%;
     bottom: 0;
-    margin: 15px;
+    margin: 40px;
+    padding: 20px;
 }
 
 div.star {
