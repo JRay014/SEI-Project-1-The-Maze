@@ -1,4 +1,4 @@
-const player = document.querySelector('.player');
+const playerIcon = document.querySelector('.player');
 const board = document.querySelector('body');
 const maze = document.querySelector('.maze');
 const startButton = document.querySelector('.start');
@@ -6,7 +6,7 @@ const resetButton = document.createElement('button');
 const ctx = maze.getContext("2d"); 
 
 function enterTheMaze() {
-    maze.append(player);
+    maze.append(playerIcon);
     startButton.remove();
     maze.style.height = '98%';
     generateMaze();
@@ -19,7 +19,7 @@ startButton.addEventListener('click', () => {
 });
 
 function reset() {
-    board.append(player);
+    board.append(playerIcon);
     resetButton.remove();
     board.append(startButton);
 }
@@ -31,11 +31,15 @@ resetButton.addEventListener('click', reset)
 function generateMaze() {
     ctx.beginPath();
     ctx.moveTo(Math.random()*maze.width, Math.random()*maze.height);
-    ctx.lineTo();
-    ctx.lineWidth = 3;
-    ctx.stroke;
+    for (let i=0; i<maze.width; i++) {
+        ctx.lineTo();
+        ctx.lineWidth = 3;
+        ctx.stroke;
+    }
 }
 //generate collision on walls
+    //Ties into maze wall generation.
+
 //allow movement 
 const player = {
 	X: 10,
