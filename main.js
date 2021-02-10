@@ -22,6 +22,8 @@ function reset() {
     board.append(playerIcon);
     resetButton.remove();
     board.append(startButton);
+    ctx.beginPath()
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
 }
 
 resetButton.addEventListener('click', reset)
@@ -55,6 +57,21 @@ function generateMaze() {
 //generate collision on walls
     //Ties into maze wall generation.
     //Single array with line coordinates on the canvas that loops for collision.
+const walls = [
+    ctx.lineTo(126, 252),
+    ctx.lineTo(378, 252),
+    ctx.lineTo(630, 126),
+    ctx.lineTo(630, 504),
+    ctx.lineTo(504, 504),
+    ctx.lineTo(0, 378),
+    ctx.lineTo(378, 630),
+    ctx.lineTo(126, 504),
+    ctx.lineTo(252, 504),
+    ctx.lineTo(252, 630),
+    ctx.lineTo(630, 630),
+    ctx.lineTo(630, 756),
+    ctx.lineTo(504, 252)
+];
 //allow movement 
 // const player = {
 // 	X: 10,
@@ -81,5 +98,3 @@ function generateMaze() {
 // }
 
 // player.render()
-
-//generate random win point
