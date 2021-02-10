@@ -5,13 +5,25 @@ const startButton = document.querySelector('.start');
 const resetButton = document.createElement('button');
 const ctx = maze.getContext("2d"); 
 
+const playerImg = new Image();
+playerImg.src = "./assets/rat_face_icon.png";
+
+const player = {
+    x: 0,
+    y: 700,
+    render: function() {
+        ctx.drawImage(playerImg, this.x, this.y, 25, 20);
+    }
+        
+}
+
 function enterTheMaze() {
-    maze.append(playerIcon);
     startButton.remove();
     maze.style.height = '98%';
     resetButton.innerHTML = 'Reset Maze';
     board.append(resetButton);
-    generateMaze()
+    generateMaze();
+    player.render();
 }
 
 startButton.addEventListener('click', () => {
@@ -23,7 +35,7 @@ function reset() {
     resetButton.remove();
     board.append(startButton);
     ctx.beginPath()
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    ctx.clearRect(0, 0, maze.width, maze.height)
 }
 
 resetButton.addEventListener('click', reset)
