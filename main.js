@@ -13,13 +13,33 @@ const player = {
     y: 700,
     render: function() {
         ctx.drawImage(playerImg, this.x, this.y, 25, 20);
-    }
-        
+    },
+    move: function(pr) {
+        if (pr.key === "w") {
+            for (let i=0; i<walls.length; i++) {
+                if (this.y == walls[i].y) {
+                    console.log(walls[i]);
+                    this.y -= 0;
+                } else {
+                this.y -= 15;
+                }
+            }
+        } else if (pr.key === "s") {
+        	this.y += 15
+        } else if (pr.key === "a") {
+        	this.x -= 15
+        } else if (pr.key === "d") {
+        	this.x += 15
+        }
+        game.render();
+    }    
 }
 
 function enterTheMaze() {
+    playerIcon.remove();
     startButton.remove();
     maze.style.height = '98%';
+    resetButton.classList.add("reset");
     resetButton.innerHTML = 'Reset Maze';
     board.append(resetButton);
     generateMaze();
@@ -34,8 +54,8 @@ function reset() {
     board.append(playerIcon);
     resetButton.remove();
     board.append(startButton);
-    ctx.beginPath()
-    ctx.clearRect(0, 0, maze.width, maze.height)
+    ctx.beginPath();
+    ctx.clearRect(0, 0, maze.width, maze.height);
 }
 
 resetButton.addEventListener('click', reset)
@@ -85,28 +105,19 @@ const walls = [
     ctx.lineTo(504, 252)
 ];
 //allow movement 
-// const player = {
-// 	X: 10,
-// 	Y: 10,
-// 	render: function() {
-// 		ctx.beginPath()
-// 	},
+const game = {
+    render: function() {
+        ctx.beginPath();
+        ctx.clearRect(0, 0, maze.width, maze.height);
+        generateMaze();
+        player.render();
+    }
+}
 
-// 	move: function(e) {
-// 		if (e.key === "w") {
-// 			this.Y -= 5
-// 		} else if (e.key === "s") {
-// 			this.Y += 5
-// 		} else if (e.key === "a") {
-// 			this.X -= 5
-// 		} else if (e.key === "d") {
-// 			this.X += 5
-// 		}
-// 		console.log(this)
-// 		console.log(`${this.X}, ${this.Y}`)
-// 		ctx.clearRect(0, 0, canvas.width, canvas.height)
-// 		game.render()
-// 	}
-// }
+document.addEventListener('keypress', pr => player.move(pr));
 
-// player.render()
+
+
+//if player x and y match wall x and y then stop movement. 
+//loop through walls each time to check. 
+//make walls class and add to it each time a new wall is created in a template.

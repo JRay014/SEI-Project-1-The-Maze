@@ -53,3 +53,12 @@ div.star {
     align-items: center;
     justify-content: center;
 }
+
+button.reset {
+    display: block;
+    align-items: center;
+    right: 50%;
+    bottom: 0;
+    margin: 40px;
+    padding: 20px;
+}
