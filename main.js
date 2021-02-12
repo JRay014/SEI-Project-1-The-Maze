@@ -37,7 +37,7 @@ const playerImg = new Image();
 playerImg.src = "./assets/rat_face_icon.png";
 
 const player = {
-    x: 66,
+    x: 48,
     y: 702,
     render: function() {
         ctx.drawImage(playerImg, this.x, this.y, 25, 20);
@@ -69,10 +69,28 @@ const player = {
             }
         }
         game.render();
+        win.winCondition();
     }    
 }
 
 document.addEventListener('keypress', pr => player.move(pr));
+
+const winImg = new Image();
+winImg.src = "./assets/Gold\ Star.png";
+
+const win = {
+    x: 48,
+    y: 48,
+    render: function() {
+        ctx.drawImage(winImg, this.x, this.y, 20, 20);
+    },
+    winCondition: function() {
+        if ((player.x === this.x) && (player.y === this.y)) {
+            alert("You Escaped the Maze!");
+            reset();
+        }
+    }
+}
 
 //Update board
 const game = {
@@ -82,7 +100,7 @@ const game = {
 // ctx.clearRect(0, 0, player.x, player.y);
         generateMaze();
         player.render();
-        //add win point
+        win.render();
     }
 }
 
@@ -96,8 +114,11 @@ function enterTheMaze() {
     resetButton.classList.add("reset");
     resetButton.innerHTML = 'Reset Maze';
     board.append(resetButton);
+    player.x = 48;
+    player.y = 702;
     generateMaze();
     player.render();
+    win.render();
 }
 
 startButton.addEventListener('click', () => {
