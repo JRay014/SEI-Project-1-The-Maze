@@ -14,10 +14,10 @@ class Walls {
         this.sy = sy
     } 
     render() {
+        ctx.moveTo(this.sx, this.sy);
         ctx.lineTo(this.fx, this.fy);
     }
     collision() {
-        // ctx.isPointInPath(this.x, this.y); //isPointInStroke
         const wallsCollision = {
             x: [],
             y: []
@@ -28,12 +28,6 @@ class Walls {
         for (let i = this.sy; i <= this.fy; i++) {
             wallsCollision.y.push(i);
         }
-        // rx = this.fx - this.sx;
-        // ry = this.fy - this.sy;
-        // wallsCollision.push({
-            //     x: rx,
-            //     y: ry
-            // });
         return wallsCollision;
     }
 }
@@ -168,51 +162,51 @@ let wall1 = new Walls(126, 252, 126, 0);
 let wall2 = new Walls(378, 252, 126, 252);
 let wall3 = new Walls(630, 126, 252, 126);
 let wall4 = new Walls(630, 504, 630, 126);
-let wall5 = new Walls(504, 504, 630, 504);
-let wall6 = new Walls(0, 378, 630, 378);
+let wall5 = new Walls(630, 504, 504, 504);//
+let wall6 = new Walls(630, 378, 0, 378);//
 let wall7 = new Walls(378, 630, 378, 378);
-let wall8 = new Walls(126, 504, 126, 756);
+let wall8 = new Walls(126, 756, 126, 504);//
 let wall9 = new Walls(252, 504, 126, 504);
 let wall10 = new Walls(252, 630, 252, 504);
 let wall11 = new Walls(630, 630, 504, 630);
 let wall12 = new Walls(630, 756, 630, 630);
-let wall13 = new Walls(504, 256, 504, 126);
+let wall13 = new Walls(504, 256, 504, 126);///
 maze1Walls.push(wall1, wall2, wall3, wall4, wall5, wall6, wall7, wall8, wall9, wall10, wall11, wall12, wall13);
 
 //generate maze walls
 function generateMaze() {
     ctx.beginPath();
-    ctx.moveTo(126, 0);
+    // ctx.moveTo(126, 0);
     wall1.render();
     // ctx.lineTo(126, 252);
     wall2.render();
     // ctx.lineTo(378, 252);
-    ctx.moveTo(252, 126);
+    // ctx.moveTo(252, 126);
     wall3.render();
     // ctx.lineTo(630, 126);
     wall4.render();
     // ctx.lineTo(630, 504);
     wall5.render();
     // ctx.lineTo(504, 504);
-    ctx.moveTo(630, 378);
+    // ctx.moveTo(630, 378);
     wall6.render();
     // ctx.lineTo(0, 378);
-    ctx.moveTo(378, 378);
+    // ctx.moveTo(378, 378);
     wall7.render();
     // ctx.lineTo(378, 630);
-    ctx.moveTo(126, 756);
+    // ctx.moveTo(126, 756);
     wall8.render();
     // ctx.lineTo(126, 504);
     wall9.render();
     // ctx.lineTo(252, 504);
     wall10.render();
     // ctx.lineTo(252, 630);
-    ctx.moveTo(504, 630);
+    // ctx.moveTo(504, 630);
     wall11.render();
     // ctx.lineTo(630, 630);
     wall12.render();
     // ctx.lineTo(630, 756);
-    ctx.moveTo(504, 126);
+    // ctx.moveTo(504, 126);
     wall13.render();
     // ctx.lineTo(504, 252);
     ctx.stroke();
