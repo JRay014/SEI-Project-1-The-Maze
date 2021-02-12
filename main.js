@@ -45,17 +45,54 @@ const player = {
     move: function(pr) {
         if (pr.key === "w") {
             if (wallsCheck() == 0) {
-                this.y += 1;
+                this.y += 12;
                 console.log(`Check: ${wallsCheck()}`);
                 console.log(`player x: ${player.x}`);
                 console.log(`player y: ${player.y}`);
             } else if (wallsCheck() == 1) {
-                this.y -= 1;
+                this.y -= 6;
                 console.log(`Check: ${wallsCheck()}`);
                 console.log(`player x: ${player.x}`);
                 console.log(`player y: ${player.y}`);
             }
-            // for (let i=0; i<wall6.collision().y.length; i++) {
+        } else if (pr.key === "s") {
+            if (wallsCheck() == 0) {
+                this.y -= 12;
+                console.log(`Check: ${wallsCheck()}`);
+                console.log(`player x: ${player.x}`);
+                console.log(`player y: ${player.y}`);
+            } else if (wallsCheck() == 1) {
+                this.y += 6;
+                console.log(`Check: ${wallsCheck()}`);
+                console.log(`player x: ${player.x}`);
+                console.log(`player y: ${player.y}`);
+            }
+        } else if (pr.key === "a") {
+            if (wallsCheck() == 0) {
+                this.x += 12;
+                console.log(`Check: ${wallsCheck()}`);
+                console.log(`player x: ${player.x}`);
+                console.log(`player y: ${player.y}`);
+            } else if (wallsCheck() == 1) {
+                this.x -= 6;
+                console.log(`Check: ${wallsCheck()}`);
+                console.log(`player x: ${player.x}`);
+                console.log(`player y: ${player.y}`);
+            }
+        } else if (pr.key === "d") {
+            if (wallsCheck() == 0) {
+                this.x -= 6;
+                console.log(`Check: ${wallsCheck()}`);
+                console.log(`player x: ${player.x}`);
+                console.log(`player y: ${player.y}`);
+            } else if (wallsCheck() == 1) {
+                this.x += 6;
+                console.log(`Check: ${wallsCheck()}`);
+                console.log(`player x: ${player.x}`);
+                console.log(`player y: ${player.y}`);
+            }
+
+                // for (let i=0; i<wall6.collision().y.length; i++) {
             //     if (this.y === wall6.collision().y[i]) {
             //         console.log("Bang");
             //         this.y -= 0;
@@ -64,42 +101,6 @@ const player = {
             //         this.y -= 12;
             //     }
             // }
-        } else if (pr.key === "s") {
-            if (wallsCheck() == 0) {
-                this.y -= 1;
-                console.log(`Check: ${wallsCheck()}`);
-                console.log(`player x: ${player.x}`);
-                console.log(`player y: ${player.y}`);
-            } else if (wallsCheck() == 1) {
-                this.y += 1;
-                console.log(`Check: ${wallsCheck()}`);
-                console.log(`player x: ${player.x}`);
-                console.log(`player y: ${player.y}`);
-            }
-        } else if (pr.key === "a") {
-            if (wallsCheck() == 0) {
-                this.x += 1;
-                console.log(`Check: ${wallsCheck()}`);
-                console.log(`player x: ${player.x}`);
-                console.log(`player y: ${player.y}`);
-            } else if (wallsCheck() == 1) {
-                this.x -= 1;
-                console.log(`Check: ${wallsCheck()}`);
-                console.log(`player x: ${player.x}`);
-                console.log(`player y: ${player.y}`);
-            }
-        } else if (pr.key === "d") {
-            if (wallsCheck() == 0) {
-                this.x -= 1;
-                console.log(`Check: ${wallsCheck()}`);
-                console.log(`player x: ${player.x}`);
-                console.log(`player y: ${player.y}`);
-            } else if (wallsCheck() == 1) {
-                this.x += 1;
-                console.log(`Check: ${wallsCheck()}`);
-                console.log(`player x: ${player.x}`);
-                console.log(`player y: ${player.y}`);
-            }
 
             // for (let i=0; i < maze1Walls.length; i++){
             //     if ((this.x >= maze1Walls[i].sx && this.x <= maze1Walls[i].fx) || (this.y >= maze1Walls[i].sy && this.y <= maze1Walls[i].fy)){
