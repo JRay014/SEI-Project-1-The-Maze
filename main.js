@@ -50,28 +50,63 @@ const player = {
     },
     move: function(pr) {
         if (pr.key === "w") {
-            for (let i=0; i<wall6.collision().y.length; i++) {
-                if (this.y === wall6.collision().y[i]) {
-                    console.log("Bang");
-                    this.y -= 0;
-                    break;
-                } else {
-                    this.y -= 12;
-                }
+            if (wallsCheck() == 0) {
+                this.y += 1;
+                console.log(`Check: ${wallsCheck()}`);
+                console.log(`player x: ${player.x}`);
+                console.log(`player y: ${player.y}`);
+            } else if (wallsCheck() == 1) {
+                this.y -= 1;
+                console.log(`Check: ${wallsCheck()}`);
+                console.log(`player x: ${player.x}`);
+                console.log(`player y: ${player.y}`);
             }
-        } else if (pr.key === "s") {
-           this.y += 12;
-        } else if (pr.key === "a") {
-            this.x -= 1;
-        } else if (pr.key === "d") {
-            
-            // if (wallsCheck() == 0) {
-            //     this.x += 0;
-            //     console.log(wallsCheck());
-            // } else if (wallsCheck() == 1) {
-            //     this.x += 1;
-            //     console.log(wallsCheck());
+            // for (let i=0; i<wall6.collision().y.length; i++) {
+            //     if (this.y === wall6.collision().y[i]) {
+            //         console.log("Bang");
+            //         this.y -= 0;
+            //         break;
+            //     } else {
+            //         this.y -= 12;
+            //     }
             // }
+        } else if (pr.key === "s") {
+            if (wallsCheck() == 0) {
+                this.y -= 1;
+                console.log(`Check: ${wallsCheck()}`);
+                console.log(`player x: ${player.x}`);
+                console.log(`player y: ${player.y}`);
+            } else if (wallsCheck() == 1) {
+                this.y += 1;
+                console.log(`Check: ${wallsCheck()}`);
+                console.log(`player x: ${player.x}`);
+                console.log(`player y: ${player.y}`);
+            }
+        } else if (pr.key === "a") {
+            if (wallsCheck() == 0) {
+                this.x += 1;
+                console.log(`Check: ${wallsCheck()}`);
+                console.log(`player x: ${player.x}`);
+                console.log(`player y: ${player.y}`);
+            } else if (wallsCheck() == 1) {
+                this.x -= 1;
+                console.log(`Check: ${wallsCheck()}`);
+                console.log(`player x: ${player.x}`);
+                console.log(`player y: ${player.y}`);
+            }
+        } else if (pr.key === "d") {
+            if (wallsCheck() == 0) {
+                this.x -= 1;
+                console.log(`Check: ${wallsCheck()}`);
+                console.log(`player x: ${player.x}`);
+                console.log(`player y: ${player.y}`);
+            } else if (wallsCheck() == 1) {
+                this.x += 1;
+                console.log(`Check: ${wallsCheck()}`);
+                console.log(`player x: ${player.x}`);
+                console.log(`player y: ${player.y}`);
+            }
+
             // for (let i=0; i < maze1Walls.length; i++){
             //     if ((this.x >= maze1Walls[i].sx && this.x <= maze1Walls[i].fx) || (this.y >= maze1Walls[i].sy && this.y <= maze1Walls[i].fy)){
             //         console.log('Collide');
@@ -187,29 +222,28 @@ function generateMaze() {
 function wallsCheck() {
     let checkY = ""
     let checkX = ""
-    for (let i=0; i<maze1Walls.lenth; i++){
+    for (let i=0; i<maze1Walls.length; i++){
+        if (checkY == "true" && checkX == "true") {
+            return 0;
+        }
         for (let j=0; j<maze1Walls[i].collision().y.length; j++) {
-           if (player.y == maze1Walls[i].collision().y[j]) {
+           if (player.y === maze1Walls[i].collision().y[j]) {
                checkY = "true";
+               break;
            } else {
                checkY = "false";
            }
-           console.log(checkY);
         }
         for (let k=0; k<maze1Walls[i].collision().x.length; k++) {
-            if (player.x == maze1Walls[i].collision().x[k]) {
+            if (player.x === maze1Walls[i].collision().x[k]) {
                 checkX = "true";
+                break;
             } else {
                 checkX = "false";
             }
-            console.log(checkX);
         }
     }
-    if (checkY == "true" && checkX == "true") {
-        return 0;
-    } else {
         return 1;
-    }
 }
 
 //generate collision on walls
@@ -229,7 +263,13 @@ wall10.collision()
 wall11.collision()
 wall12.collision()
 wall13.collision()
-    
+
+console.log(maze1Walls[0].collision().x);
+console.log(maze1Walls[0].collision().y);
+console.log(maze1Walls[1].collision().x);
+console.log(maze1Walls[1].collision().y);
+console.log(player.x);
+console.log(player.y);
     
     
     
