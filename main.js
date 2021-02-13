@@ -39,8 +39,11 @@ playerImg.src = "./assets/rat_face_icon.png";
 const player = {
     x: 48,
     y: 702,
+    playerModelBoundX: this.x + 24,
+    playerModelBoundY: this.y + 18,
+
     render: function() {
-        ctx.drawImage(playerImg, this.x, this.y, 25, 20);
+        ctx.drawImage(playerImg, this.x, this.y, 24, 18);
     },
     move: function(pr) {
         if (pr.key === "w") {
@@ -82,10 +85,10 @@ const win = {
     x: 48,
     y: 48,
     render: function() {
-        ctx.drawImage(winImg, this.x, this.y, 20, 20);
+        ctx.drawImage(winImg, this.x, this.y, 18, 18);
     },
     winCondition: function() {
-        if ((player.x === this.x) && (player.y === this.y)) {
+        if (((player.x >= 48) && (player.y >= 48)) && (player.x <= 66) && (player.y <= 66)) {
             alert("You Escaped the Maze!");
             reset();
         }
@@ -185,7 +188,7 @@ function wallsCheck() {
             return 0;
         }
         for (let j=0; j<maze1Walls[i].collision().y.length; j++) {
-           if (player.y === maze1Walls[i].collision().y[j]) {
+           if (player.y === maze1Walls[i].collision().y[j] || (player.y + 18) === maze1Walls[i].collision().y[j]) {
                checkY = "true";
                break;
            } else {
@@ -193,7 +196,7 @@ function wallsCheck() {
            }
         }
         for (let k=0; k<maze1Walls[i].collision().x.length; k++) {
-            if (player.x === maze1Walls[i].collision().x[k]) {
+            if (player.x === maze1Walls[i].collision().x[k] || (player.x + 24) === maze1Walls[i].collision().x[k]) {
                 checkX = "true";
                 break;
             } else {

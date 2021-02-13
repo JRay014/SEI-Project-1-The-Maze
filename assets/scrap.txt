@@ -324,3 +324,40 @@ function generateMaze() {
     // ctx.lineTo(504, 252);
     ctx.stroke();
 }
+
+
+
+if (pr.key === "w") {
+            if (wallsCheck() == 0) {
+                this.y += 24;
+            } else if (wallsCheck() == 1) {
+                this.y -= 6;
+            }
+        } else if (pr.key === "s") {
+            if (wallsCheck() == 0) {
+                this.y -= 24;
+            } else if (wallsCheck() == 1) {
+                this.y += 6;
+            }
+        } else if (pr.key === "a") {
+            if (wallsCheck() == 0) {
+                this.x += 24;
+            } else if (wallsCheck() == 1) {
+                this.x -= 6;
+            }
+        } else if (pr.key === "d") {
+            if (wallsCheck() == 0) {
+                this.x -= 24;
+            } else if (wallsCheck() == 1) {
+                this.x += 6;
+            }
+        }
+
+
+
+
+
+ if ((player.x === this.x) && (player.y === this.y)) {
+            alert("You Escaped the Maze!");
+            reset();
+        }
