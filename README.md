@@ -3,8 +3,26 @@ A simple maze game.
 
 Description & Approach
 
-The game is designed to let the user see the maze once and then find their way through. A maze tameplate will be generated at random when the page loads and when the player enters
-the maze a fog decends so the player can't see the whole maze. The player wins when they reach the winning square. The game then resets and a new random template is selected.
+The game is designed so that the player can select one of the stages to play through. When a stage is load it is originally hidden until the player enters it. 
+Once the stage is generated the player can use WASD to move around. Walls and borders have collision and cannot be passed through. The player wins once they have
+gotten to the star/cheese at the end of the maze.
+
+Technologies
+
+This game is built mostly in canvas. It's core mechanics involve key movement for the player and collision on walls and the win square. 
+
+User Stories
+
+- Users can select a maze from the starting list.
+- Users choose to enter the maze selected through the "enter maze" button.
+- Users can use WASD to move around the maze in up, left, down, and right respectively.
+- Users can reset the maze at any time with the "reset" button.
+
+Upcoming Features
+
+Soon the game will have more levels built on bigger grids so that they are harder and more complex. There will be a level selector page that the game starts on 
+so the player can choose which level they want to play. There will also be styling and win condition updates that will change the appearance and bring players back
+to level select when they win.
 
 Wireframes
 
