@@ -3,6 +3,8 @@ body {
    align-content: center;
    text-align: center;
    background-color: rgb(75, 75, 75);
+   width: 100%;
+   height: 100%;
 }
 
 h1{
@@ -19,6 +21,8 @@ p{
 canvas.maze {
     border: 5px solid rgb(112, 6, 56); 
     background-color: antiquewhite; 
+    width: 100%;
+    height: 100%;
 }
 
 div.player {
@@ -44,7 +48,7 @@ button.begin {
 }
 
 div.star {
-    background-image: url(./assets/Gold\ Star.png);
+    background-image: url(./assets/Cheese.png);
     background-size: cover;
     background-position: center center;
     /* background-color: #cccccc; */

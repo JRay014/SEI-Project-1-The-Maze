@@ -79,7 +79,7 @@ const player = {
 document.addEventListener('keypress', pr => player.move(pr));
 
 const winImg = new Image();
-winImg.src = "./assets/Gold\ Star.png";
+winImg.src = "./assets/Cheese.png";
 
 const win = {
     x: 48,
