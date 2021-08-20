@@ -138,31 +138,76 @@ function reset() {
 
 resetButton.addEventListener('click', reset);
 
-
+//Level walls container
 const maze1Walls = []
-let wall1 = new Walls(126, 252, 126, 0);
-let wall2 = new Walls(378, 252, 126, 252);
-let wall3 = new Walls(630, 126, 252, 126);
-let wall4 = new Walls(630, 504, 630, 126);
-let wall5 = new Walls(630, 504, 504, 504);//
-let wall6 = new Walls(630, 378, 0, 378);//
-let wall7 = new Walls(378, 630, 378, 378);
-let wall8 = new Walls(126, 756, 126, 504);//
-let wall9 = new Walls(252, 504, 126, 504);
-let wall10 = new Walls(252, 630, 252, 504);
-let wall11 = new Walls(630, 630, 504, 630);
-let wall12 = new Walls(630, 756, 630, 630);
-let wall13 = new Walls(504, 256, 504, 126);///
 
-let wall14 = new Walls(756, 0, 0, 0);
-let wall15 = new Walls(756, 756, 756, 0);
-let wall16 = new Walls(0, 756, 0, 0);
-let wall17 = new Walls(756, 756, 0, 756);
-maze1Walls.push(wall1, wall2, wall3, wall4, wall5, wall6, wall7, wall8, wall9, wall10, wall11, wall12, wall13, wall14, wall15, wall16, wall17, wall17);
+//Define level walls
+let wall1 = new Walls(0, 0, 0, 0);
+let wall2 = new Walls(0, 0, 0, 0);
+let wall3 = new Walls(0, 0, 0, 0);
+let wall4 = new Walls(0, 0, 0, 0);
+let wall5 = new Walls(0, 0, 0, 0);//
+let wall6 = new Walls(0, 0, 0, 0);//
+let wall7 = new Walls(0, 0, 0, 0);
+let wall8 = new Walls(0, 0, 0, 0);//
+let wall9 = new Walls(0, 0, 0, 0);
+let wall10 = new Walls(0, 0, 0, 0);
+let wall11 = new Walls(0, 0, 0, 0);
+let wall12 = new Walls(0, 0, 0, 0);
+let wall13 = new Walls(0, 0, 0, 0);///
+let wall18 = new Walls(0, 0, 0, 0);
+let wall19 = new Walls(0, 0, 0, 0);
+let wall20 = new Walls(0, 0, 0, 0);
+let wall21 = new Walls(0, 0, 0, 0);
+let wall22 = new Walls(0, 0, 0, 0);
+let wall23 = new Walls(0, 0, 0, 0);
+let wall24 = new Walls(0, 0, 0, 0);
+let wall25 = new Walls(0, 0, 0, 0);
+let wall26 = new Walls(0, 0, 0, 0);
+let wall27 = new Walls(0, 0, 0, 0);
+let wall28 = new Walls(0, 0, 0, 0);
+let wall29 = new Walls(0, 0, 0, 0);
+let wall30 = new Walls(0, 0, 0, 0);
+let wall31 = new Walls(0, 0, 0, 0);
+let wall32 = new Walls(0, 0, 0, 0);
+let wall33 = new Walls(0, 0, 0, 0);
+let wall34 = new Walls(0, 0, 0, 0);
+let wall35 = new Walls(0, 0, 0, 0);
+let wall36 = new Walls(0, 0, 0, 0);
+let wall37 = new Walls(0, 0, 0, 0);
+let wall38 = new Walls(0, 0, 0, 0);
+let wall39 = new Walls(0, 0, 0, 0);
+let wall40 = new Walls(0, 0, 0, 0);
+let wall41 = new Walls(0, 0, 0, 0);
+let wall42 = new Walls(0, 0, 0, 0);
+let wall43 = new Walls(0, 0, 0, 0);
+let wall44 = new Walls(0, 0, 0, 0);
+let wall45 = new Walls(0, 0, 0, 0);
+let wall46 = new Walls(0, 0, 0, 0);
+let wall47 = new Walls(0, 0, 0, 0);
+let wall48 = new Walls(0, 0, 0, 0);
+let wall49 = new Walls(0, 0, 0, 0);
+let wall50 = new Walls(0, 0, 0, 0);
+let wall51 = new Walls(0, 0, 0, 0);
 
-//generate maze walls
+//Border Walls so the edges of the maze have collision.
+let wall14 = new Walls(1600, 0, 0, 0);
+let wall15 = new Walls(1600, 1600, 1600, 0);
+let wall16 = new Walls(0, 1600, 0, 0);
+let wall17 = new Walls(1600, 1600, 0, 1600);
+
+//Adding level walls to walls container (entra wall added at the end for error fix, final wall was not generating with out repeat.)
+maze1Walls.push(wall1, wall2, wall3, wall4, wall5, wall6, wall7, wall8, wall9, wall10, 
+    wall11, wall12, wall13, wall14, wall15, wall16, wall17, wall18, wall19, wall20,
+    wall21, wall22, wall23, wall24, wall25, wall26, wall27, wall28, wall29, wall30,
+    wall31, wall32, wall33, wall34, wall35, wall36, wall37, wall38, wall39, wall40,
+    wall41, wall42, wall43, wall44, wall45, wall46, wall47, wall48, wall49, wall50,
+    wall51, wall51);
+
+//generate maze walls on board
 function generateMaze() {
     ctx.beginPath();
+
     wall1.render();
     wall2.render();
     wall3.render();
@@ -176,6 +221,47 @@ function generateMaze() {
     wall11.render();
     wall12.render();
     wall13.render();
+    wall18.render();
+    wall19.render();
+    wall20.render();
+    wall21.render();
+    wall22.render();
+    wall23.render();
+    wall24.render();
+    wall25.render();
+    wall26.render();
+    wall27.render();
+    wall28.render();
+    wall29.render();
+    wall30.render();
+    wall31.render();
+    wall32.render();
+    wall33.render();
+    wall34.render();
+    wall35.render();
+    wall36.render();
+    wall37.render();
+    wall38.render();
+    wall39.render();
+    wall40.render();
+    wall41.render();
+    wall42.render();
+    wall43.render();
+    wall44.render();
+    wall45.render();
+    wall46.render();
+    wall47.render();
+    wall48.render();
+    wall49.render();
+    wall50.render();
+    wall51.render();
+
+    //border walls
+    wall14.render();
+    wall15.render();
+    wall16.render();
+    wall17.render();
+
     ctx.stroke();
 }
 
