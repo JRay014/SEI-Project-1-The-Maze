@@ -5,7 +5,8 @@ const startButton = document.querySelector('.start');
 const resetButton = document.createElement('button');
 const ctx = maze.getContext("2d"); 
 
-
+//fx = first X coordinate, fy = first Y coordinate, sx = second X coordinate, sy = second Y coordinate
+//lines are drawn from first to second coordinates, diagonals are drawn by having variation on both axies.
 class Walls {
     constructor(fx, fy, sx, sy) {
         this.fx = fx,
@@ -37,38 +38,38 @@ const playerImg = new Image();
 playerImg.src = "./assets/rat_face_icon.png";
 
 const player = {
-    x: 48,
-    y: 702,
-    playerModelBoundX: this.x + 24,
-    playerModelBoundY: this.y + 18,
+    x: 0,
+    y: 0,
+    playerModelBoundX: this.x + 25,
+    playerModelBoundY: this.y + 20,
 
     render: function() {
-        ctx.drawImage(playerImg, this.x, this.y, 24, 18);
+        ctx.drawImage(playerImg, this.x, this.y, 25, 20);
     },
     move: function(pr) {
         if (pr.key === "w") {
             if (wallsCheck() == 0) {
-                this.y += 24;
+                this.y += 25;
             } else if (wallsCheck() == 1) {
-                this.y -= 6;
+                this.y -= 5;
             }
         } else if (pr.key === "s") {
             if (wallsCheck() == 0) {
-                this.y -= 24;
+                this.y -= 25;
             } else if (wallsCheck() == 1) {
-                this.y += 6;
+                this.y += 5;
             }
         } else if (pr.key === "a") {
             if (wallsCheck() == 0) {
-                this.x += 24;
+                this.x += 25;
             } else if (wallsCheck() == 1) {
-                this.x -= 6;
+                this.x -= 5;
             }
         } else if (pr.key === "d") {
             if (wallsCheck() == 0) {
-                this.x -= 24;
+                this.x -= 25;
             } else if (wallsCheck() == 1) {
-                this.x += 6;
+                this.x += 5;
             }
         }
         game.render();
@@ -82,10 +83,10 @@ const winImg = new Image();
 winImg.src = "./assets/Cheese.png";
 
 const win = {
-    x: 48,
-    y: 48,
+    x: 1550,
+    y: 40,
     render: function() {
-        ctx.drawImage(winImg, this.x, this.y, 18, 18);
+        ctx.drawImage(winImg, this.x, this.y, 20, 20);
     },
     winCondition: function() {
         if (((player.x >= 48) && (player.y >= 48)) && (player.x <= 66) && (player.y <= 66)) {
@@ -117,8 +118,8 @@ function enterTheMaze() {
     resetButton.classList.add("reset");
     resetButton.innerHTML = 'Reset Maze';
     board.append(resetButton);
-    player.x = 48;
-    player.y = 702;
+    player.x = 480;
+    player.y = 1520;
     generateMaze();
     player.render();
     win.render();
@@ -142,53 +143,57 @@ resetButton.addEventListener('click', reset);
 const maze1Walls = []
 
 //Define level walls
-let wall1 = new Walls(0, 0, 0, 0);
-let wall2 = new Walls(0, 0, 0, 0);
-let wall3 = new Walls(0, 0, 0, 0);
-let wall4 = new Walls(0, 0, 0, 0);
-let wall5 = new Walls(0, 0, 0, 0);//
-let wall6 = new Walls(0, 0, 0, 0);//
-let wall7 = new Walls(0, 0, 0, 0);
-let wall8 = new Walls(0, 0, 0, 0);//
-let wall9 = new Walls(0, 0, 0, 0);
-let wall10 = new Walls(0, 0, 0, 0);
-let wall11 = new Walls(0, 0, 0, 0);
-let wall12 = new Walls(0, 0, 0, 0);
-let wall13 = new Walls(0, 0, 0, 0);///
-let wall18 = new Walls(0, 0, 0, 0);
-let wall19 = new Walls(0, 0, 0, 0);
-let wall20 = new Walls(0, 0, 0, 0);
-let wall21 = new Walls(0, 0, 0, 0);
-let wall22 = new Walls(0, 0, 0, 0);
-let wall23 = new Walls(0, 0, 0, 0);
-let wall24 = new Walls(0, 0, 0, 0);
-let wall25 = new Walls(0, 0, 0, 0);
-let wall26 = new Walls(0, 0, 0, 0);
-let wall27 = new Walls(0, 0, 0, 0);
-let wall28 = new Walls(0, 0, 0, 0);
-let wall29 = new Walls(0, 0, 0, 0);
-let wall30 = new Walls(0, 0, 0, 0);
-let wall31 = new Walls(0, 0, 0, 0);
-let wall32 = new Walls(0, 0, 0, 0);
-let wall33 = new Walls(0, 0, 0, 0);
-let wall34 = new Walls(0, 0, 0, 0);
-let wall35 = new Walls(0, 0, 0, 0);
-let wall36 = new Walls(0, 0, 0, 0);
-let wall37 = new Walls(0, 0, 0, 0);
-let wall38 = new Walls(0, 0, 0, 0);
-let wall39 = new Walls(0, 0, 0, 0);
-let wall40 = new Walls(0, 0, 0, 0);
-let wall41 = new Walls(0, 0, 0, 0);
-let wall42 = new Walls(0, 0, 0, 0);
-let wall43 = new Walls(0, 0, 0, 0);
-let wall44 = new Walls(0, 0, 0, 0);
-let wall45 = new Walls(0, 0, 0, 0);
-let wall46 = new Walls(0, 0, 0, 0);
-let wall47 = new Walls(0, 0, 0, 0);
-let wall48 = new Walls(0, 0, 0, 0);
-let wall49 = new Walls(0, 0, 0, 0);
-let wall50 = new Walls(0, 0, 0, 0);
-let wall51 = new Walls(0, 0, 0, 0);
+//Create/define units for walls?
+let wall1 = new Walls(1360, 160, 1600, 160);
+let wall2 = new Walls(1440, 560, 1600, 560);
+let wall3 = new Walls(1360, 880, 1600, 880);
+let wall4 = new Walls(1520, 1040, 1600, 1040);
+let wall5 = new Walls(1520, 1440, 1600, 1440);//
+let wall6 = new Walls(1200, 0, 1200, 400);//
+let wall7 = new Walls(1200, 400, 1360, 400);
+let wall8 = new Walls(1360, 320, 1360, 720);//
+let wall9 = new Walls(1360, 320, 1520, 320);
+let wall10 = new Walls(1360, 720, 1520, 720);
+let wall11 = new Walls(1360, 880, 1360, 1280);
+let wall12 = new Walls(1360, 1280, 1520, 1280);
+let wall13 = new Walls(1280, 1440, 1440, 1440);///
+let wall18 = new Walls(1440, 1440, 1440, 1520);
+let wall19 = new Walls(960, 0, 960, 80);
+let wall20 = new Walls(1040, 80, 1040, 560);
+let wall21 = new Walls(960, 560, 1280, 560);
+let wall22 = new Walls(1280, 560, 1280, 960);
+let wall23 = new Walls(1280, 960, 1360, 960);
+let wall24 = new Walls(960, 1120, 1280, 1120);
+let wall25 = new Walls(1280, 1120, 1280, 1600);
+let wall26 = new Walls(720, 80, 720, 240);
+let wall27 = new Walls(560, 240, 1040, 240);
+let wall28 = new Walls(800, 400, 960, 400);
+let wall29 = new Walls(800, 400, 800, 1360);
+let wall30 = new Walls(800, 720, 1120, 720);
+let wall31 = new Walls(800, 960, 1120, 960);
+let wall32 = new Walls(640, 1360, 1040, 1360);
+let wall33 = new Walls(1040, 1360, 1040, 1520);
+let wall34 = new Walls(80, 160, 560, 160);
+let wall35 = new Walls(560, 160, 560, 400);
+let wall36 = new Walls(640, 400, 640, 960);
+let wall37 = new Walls(640, 1120, 640, 1360);
+let wall38 = new Walls(80, 160, 80, 320);
+let wall39 = new Walls(80, 320, 400, 320);
+let wall40 = new Walls(400, 320, 400, 480);
+let wall41 = new Walls(80, 400, 80, 560);
+let wall42 = new Walls(0, 560, 480, 560);
+let wall43 = new Walls(480, 560, 480, 800);
+let wall44 = new Walls(160, 720, 320, 720);
+let wall45 = new Walls(320, 720, 320, 1120);
+let wall46 = new Walls(320, 960, 640, 960);
+let wall47 = new Walls(160, 1120, 320, 1120);
+let wall48 = new Walls(480, 1120, 480, 1440);
+let wall49 = new Walls(160, 1440, 880, 1440);
+let wall50 = new Walls(0, 960, 160, 960);
+let wall51 = new Walls(0, 1360, 320, 1360);
+let wall52 = new Walls(560, 400, 640, 400);
+let wall53 = new Walls(320, 1280, 320, 1360);
+let wall54 = new Walls(160, 1280, 320, 1280);
 
 //Border Walls so the edges of the maze have collision.
 let wall14 = new Walls(1600, 0, 0, 0);
@@ -202,7 +207,7 @@ maze1Walls.push(wall1, wall2, wall3, wall4, wall5, wall6, wall7, wall8, wall9, w
     wall21, wall22, wall23, wall24, wall25, wall26, wall27, wall28, wall29, wall30,
     wall31, wall32, wall33, wall34, wall35, wall36, wall37, wall38, wall39, wall40,
     wall41, wall42, wall43, wall44, wall45, wall46, wall47, wall48, wall49, wall50,
-    wall51, wall51);
+    wall51, wall52, wall53, wall54, wall54);
 
 //generate maze walls on board
 function generateMaze() {
@@ -255,6 +260,9 @@ function generateMaze() {
     wall49.render();
     wall50.render();
     wall51.render();
+    wall52.render();
+    wall53.render();
+    wall54.render();
 
     //border walls
     wall14.render();
@@ -274,7 +282,7 @@ function wallsCheck() {
             return 0;
         }
         for (let j=0; j<maze1Walls[i].collision().y.length; j++) {
-           if (player.y === maze1Walls[i].collision().y[j] || (player.y + 18) === maze1Walls[i].collision().y[j]) {
+           if (player.y === maze1Walls[i].collision().y[j] || (player.y + 20) === maze1Walls[i].collision().y[j]) {
                checkY = "true";
                break;
            } else {
@@ -282,7 +290,7 @@ function wallsCheck() {
            }
         }
         for (let k=0; k<maze1Walls[i].collision().x.length; k++) {
-            if (player.x === maze1Walls[i].collision().x[k] || (player.x + 24) === maze1Walls[i].collision().x[k]) {
+            if (player.x === maze1Walls[i].collision().x[k] || (player.x + 25) === maze1Walls[i].collision().x[k]) {
                 checkX = "true";
                 break;
             } else {
