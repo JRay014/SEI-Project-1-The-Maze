@@ -49,27 +49,27 @@ const player = {
     move: function(pr) {
         if (pr.key === "w") {
             if (wallsCheck() == 0) {
-                this.y += 25;
+                this.y += 80;
             } else if (wallsCheck() == 1) {
-                this.y -= 5;
+                this.y -= 20;
             }
         } else if (pr.key === "s") {
             if (wallsCheck() == 0) {
-                this.y -= 25;
+                this.y -= 80;
             } else if (wallsCheck() == 1) {
-                this.y += 5;
+                this.y += 20;
             }
         } else if (pr.key === "a") {
             if (wallsCheck() == 0) {
-                this.x += 25;
+                this.x += 80;
             } else if (wallsCheck() == 1) {
-                this.x -= 5;
+                this.x -= 20;
             }
         } else if (pr.key === "d") {
             if (wallsCheck() == 0) {
-                this.x -= 25;
+                this.x -= 80;
             } else if (wallsCheck() == 1) {
-                this.x += 5;
+                this.x += 20;
             }
         }
         game.render();
@@ -83,8 +83,8 @@ const winImg = new Image();
 winImg.src = "./assets/Cheese.png";
 
 const win = {
-    x: 1550,
-    y: 40,
+    x: 1520,
+    y: 80,
     render: function() {
         ctx.drawImage(winImg, this.x, this.y, 20, 20);
     },
