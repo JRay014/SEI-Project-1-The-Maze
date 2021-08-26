@@ -211,66 +211,71 @@ maze1Walls.push(wall1, wall2, wall3, wall4, wall5, wall6, wall7, wall8, wall9, w
 
 //generate maze walls on board
 function generateMaze() {
-    ctx.beginPath();
+    // ctx.beginPath();
 
-    wall1.render();
-    wall2.render();
-    wall3.render();
-    wall4.render();
-    wall5.render();
-    wall6.render();
-    wall7.render();
-    wall8.render();
-    wall9.render();
-    wall10.render();
-    wall11.render();
-    wall12.render();
-    wall13.render();
-    wall18.render();
-    wall19.render();
-    wall20.render();
-    wall21.render();
-    wall22.render();
-    wall23.render();
-    wall24.render();
-    wall25.render();
-    wall26.render();
-    wall27.render();
-    wall28.render();
-    wall29.render();
-    wall30.render();
-    wall31.render();
-    wall32.render();
-    wall33.render();
-    wall34.render();
-    wall35.render();
-    wall36.render();
-    wall37.render();
-    wall38.render();
-    wall39.render();
-    wall40.render();
-    wall41.render();
-    wall42.render();
-    wall43.render();
-    wall44.render();
-    wall45.render();
-    wall46.render();
-    wall47.render();
-    wall48.render();
-    wall49.render();
-    wall50.render();
-    wall51.render();
-    wall52.render();
-    wall53.render();
-    wall54.render();
+    for (let i = 0; i < maze1Walls.length; i++) {
+        ctx.beginPath();
+        maze1Walls[i].render();
+        ctx.stroke();
+    }
+    // wall1.render();
+    // wall2.render();
+    // wall3.render();
+    // wall4.render();
+    // wall5.render();
+    // wall6.render();
+    // wall7.render();
+    // wall8.render();
+    // wall9.render();
+    // wall10.render();
+    // wall11.render();
+    // wall12.render();
+    // wall13.render();
+    // wall18.render();
+    // wall19.render();
+    // wall20.render();
+    // wall21.render();
+    // wall22.render();
+    // wall23.render();
+    // wall24.render();
+    // wall25.render();
+    // wall26.render();
+    // wall27.render();
+    // wall28.render();
+    // wall29.render();
+    // wall30.render();
+    // wall31.render();
+    // wall32.render();
+    // wall33.render();
+    // wall34.render();
+    // wall35.render();
+    // wall36.render();
+    // wall37.render();
+    // wall38.render();
+    // wall39.render();
+    // wall40.render();
+    // wall41.render();
+    // wall42.render();
+    // wall43.render();
+    // wall44.render();
+    // wall45.render();
+    // wall46.render();
+    // wall47.render();
+    // wall48.render();
+    // wall49.render();
+    // wall50.render();
+    // wall51.render();
+    // wall52.render();
+    // wall53.render();
+    // wall54.render();
 
-    //border walls
-    wall14.render();
-    wall15.render();
-    wall16.render();
-    wall17.render();
+    // //border walls
+    // wall14.render();
+    // wall15.render();
+    // wall16.render();
+    // wall17.render();
 
-    ctx.stroke();
+    // ctx.stroke();
 }
 
 //check function
