@@ -48,28 +48,36 @@ const player = {
     },
     move: function(pr) {
         if (pr.key === "w") {
+            console.log(this.x);
+            console.log(this.y);
             if (wallsCheck() == 0) {
                 this.y += 80;
             } else if (wallsCheck() == 1) {
-                this.y -= 20;
+                this.y -= 80;
             }
         } else if (pr.key === "s") {
+            console.log(this.x);
+            console.log(this.y);
             if (wallsCheck() == 0) {
                 this.y -= 80;
             } else if (wallsCheck() == 1) {
-                this.y += 20;
+                this.y += 80;
             }
         } else if (pr.key === "a") {
+            console.log(this.x);
+            console.log(this.y);
             if (wallsCheck() == 0) {
                 this.x += 80;
             } else if (wallsCheck() == 1) {
-                this.x -= 20;
+                this.x -= 80;
             }
         } else if (pr.key === "d") {
+            console.log(this.x);
+            console.log(this.y);
             if (wallsCheck() == 0) {
                 this.x -= 80;
             } else if (wallsCheck() == 1) {
-                this.x += 20;
+                this.x += 80;
             }
         }
         game.render();
@@ -201,13 +209,16 @@ let wall15 = new Walls(1600, 1600, 1600, 0);
 let wall16 = new Walls(0, 1600, 0, 0);
 let wall17 = new Walls(1600, 1600, 0, 1600);
 
-//Adding level walls to walls container (entra wall added at the end for error fix, final wall was not generating with out repeat.)
+//Adding level walls to walls container (extra wall added at the end for error fix, final wall was not generating with out repeat. fixed)
+// for (let i = 0; i <= 54; i++) {
+//     maze1Walls.push(wall[i]);
+// }
 maze1Walls.push(wall1, wall2, wall3, wall4, wall5, wall6, wall7, wall8, wall9, wall10, 
     wall11, wall12, wall13, wall14, wall15, wall16, wall17, wall18, wall19, wall20,
     wall21, wall22, wall23, wall24, wall25, wall26, wall27, wall28, wall29, wall30,
     wall31, wall32, wall33, wall34, wall35, wall36, wall37, wall38, wall39, wall40,
     wall41, wall42, wall43, wall44, wall45, wall46, wall47, wall48, wall49, wall50,
-    wall51, wall52, wall53, wall54, wall54);
+    wall51, wall52, wall53, wall54);
 
 //generate maze walls on board
 function generateMaze() {
@@ -218,56 +229,6 @@ function generateMaze() {
         maze1Walls[i].render();
         ctx.stroke();
     }
-    // wall1.render();
-    // wall2.render();
-    // wall3.render();
-    // wall4.render();
-    // wall5.render();
-    // wall6.render();
-    // wall7.render();
-    // wall8.render();
-    // wall9.render();
-    // wall10.render();
-    // wall11.render();
-    // wall12.render();
-    // wall13.render();
-    // wall18.render();
-    // wall19.render();
-    // wall20.render();
-    // wall21.render();
-    // wall22.render();
-    // wall23.render();
-    // wall24.render();
-    // wall25.render();
-    // wall26.render();
-    // wall27.render();
-    // wall28.render();
-    // wall29.render();
-    // wall30.render();
-    // wall31.render();
-    // wall32.render();
-    // wall33.render();
-    // wall34.render();
-    // wall35.render();
-    // wall36.render();
-    // wall37.render();
-    // wall38.render();
-    // wall39.render();
-    // wall40.render();
-    // wall41.render();
-    // wall42.render();
-    // wall43.render();
-    // wall44.render();
-    // wall45.render();
-    // wall46.render();
-    // wall47.render();
-    // wall48.render();
-    // wall49.render();
-    // wall50.render();
-    // wall51.render();
-    // wall52.render();
-    // wall53.render();
-    // wall54.render();
 
     // //border walls
     // wall14.render();
