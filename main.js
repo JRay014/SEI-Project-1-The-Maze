@@ -50,8 +50,12 @@ const player = {
         if (pr.key === "w") {
             console.log(this.x);
             console.log(this.y);
+            for (let i=0; i<80; i++) {
+                this.y += 1;
+                console.log(this.y);
+            }
             if (wallsCheck() == 0) {
-                this.y += 80;
+                // this.y += 80;
             } else if (wallsCheck() == 1) {
                 this.y -= 80;
             }
